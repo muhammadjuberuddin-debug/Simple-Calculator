@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'VT323', monospace;
+}
+
+.calculator {
+    background-color: #4cc9f0;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.display-container {
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto 20px auto;
+}
+#display {
+    width: 100%;
+    border: none;
+    border-radius: 2.5px;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+
+.btn {
+    border: none;
+    border-radius: 2.5px;
+    font-size: 30px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+#btn-clear {
+    background-color: #f72585;
+    color: whitesmoke;
+}
+#btn-divide, #btn-multiply, #btn-subtract, #btn-add {
+    background-color: #560bad;
+    color: whitesmoke;
+}
+#btn-equals {
+    background-color: #3f37c9;
+    color: whitesmoke;
+}
