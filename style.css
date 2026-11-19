@@ -10,7 +10,7 @@ body {
 
 .calculator {
     background-color: #4cc9f0;
-    width: 300px;
+    width: 250px;
     padding: 20px;
     border-radius: 10px;
     box-sizing: border-box;
@@ -27,13 +27,13 @@ body {
     border: none;
     border-radius: 2.5px;
     box-sizing: border-box;
-    font-size: 25px;
+    font-size: 50px;
 }
 
 .btn {
     border: none;
     border-radius: 2.5px;
-    font-size: 30px;
+    font-size: 50px;
     box-sizing: border-box;
     font-family: inherit;
 }
@@ -49,3 +49,83 @@ body {
     background-color: #3f37c9;
     color: whitesmoke;
 }
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "clear divide multiply subtract"
+        "seven eight  nine     add"
+        "six   five   four     equals"
+        "three two    one      equals"
+        "zero  zero   decimal  equals";
+    gap: 5px;
+}
+
+#btn-clear    { grid-area: clear; transition:all 0.3s ease; }
+#btn-clear:hover { background-color: #b5179e; }
+#btn-clear:active { background-color: #7209b7; }
+
+#btn-divide   { grid-area: divide; transition:all 0.3s ease; }
+#btn-divide:hover { background-color: #3f37c9; }
+#btn-divide:active { background-color: #3a0ca3; }
+
+#btn-multiply { grid-area: multiply; transition:all 0.3s ease; }
+#btn-multiply:hover { background-color: #3f37c9; }
+#btn-multiply:active { background-color: #3a0ca3; }
+
+#btn-subtract { grid-area: subtract; transition:all 0.3s ease; }
+#btn-subtract:hover { background-color: #3f37c9; }
+#btn-subtract:active { background-color: #3a0ca3; }
+
+#btn-7        { grid-area: seven; transition:all 0.3s ease; }
+#btn-7:hover {background-color: darkgray;}
+#btn-7:active {background-color: whitesmoke;}
+
+#btn-8        { grid-area: eight; transition:all 0.3s ease; }
+#btn-8:hover {background-color: darkgray;}
+#btn-8:active {background-color: whitesmoke;}
+
+#btn-9        { grid-area: nine; transition:all 0.3s ease;}
+#btn-9:hover {background-color: darkgray;}
+#btn-9:active {background-color: whitesmoke;}
+
+#btn-add      { grid-area: add; transition:all 0.3s ease;}
+#btn-add:hover { background-color: #3f37c9; }
+#btn-add:active { background-color: #3a0ca3; }
+
+#btn-6        { grid-area: six; transition:all 0.3s ease;}
+#btn-6:hover {background-color: darkgray;}
+#btn-6:active {background-color: whitesmoke;}
+
+#btn-5        { grid-area: five; transition:all 0.3s ease;}
+#btn-5:hover {background-color: darkgray;}
+#btn-5:active {background-color: whitesmoke;}
+
+#btn-4        { grid-area: four; transition:all 0.3s ease;}
+#btn-4:hover {background-color: darkgray;}
+#btn-4:active {background-color: whitesmoke;}
+
+#btn-equals   { grid-area: equals; transition:all 0.3s ease; }
+#btn-equals:hover { background-color: #f72585;}
+#btn-equals:active { background-color: #4895ef;}
+
+#btn-3        { grid-area: three; transition:all 0.3s ease;}
+#btn-3:hover {background-color: darkgray;}
+#btn-3:active {background-color: whitesmoke;}
+
+#btn-2        { grid-area: two; transition:all 0.3s ease;}
+#btn-2:hover {background-color: darkgray;}
+#btn-2:active {background-color: whitesmoke;}
+
+#btn-1        { grid-area: one; transition:all 0.3s ease;}
+#btn-1:hover {background-color: darkgray;}
+#btn-1:active {background-color: whitesmoke;}
+
+#btn-0        { grid-area: zero; transition:all 0.3s ease;}
+#btn-0:hover {background-color: darkgray;}
+#btn-0:active {background-color: whitesmoke;}
+
+#btn-decimal  { grid-area: decimal; transition:all 0.3s ease;}
+#btn-decimal:hover {background-color: darkgray;}
+#btn-decimal:active {background-color: whitesmoke;}
