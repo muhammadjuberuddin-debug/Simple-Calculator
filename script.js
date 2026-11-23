@@ -80,3 +80,45 @@ function chooseOperator(nextOp) {
     waitingForOperand = true;
 }
 
+function handleEquals() {
+    if (operator === null || previousValue === null || currentInput === 'Error') return;
+    const inputValue = parseFloat(currentInput)
+    const formatted  = result === null ? null : formatResult(result);
+    if (formatted === null) return showError();
+
+    currentInput = formatted;
+    previousValue = null;
+    operator = null;
+    waitingForOperand = true;
+    updateDisplay();
+}
+
+function clearAll() {
+    currentInput = '0';
+    previousValue = null;
+    operator = null;
+    waitingForOperand = false;
+    updateDisplay();
+}
+
+const operatorMap = {
+    add: '+',
+    subtract: '−',
+    multiply: '×',
+    divide: '÷'
+}
+
+buttons.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn');
+    if (!btn) return;
+
+    const key = btn.id.replace('btn-', '');
+
+    if (/^\d$/.test(key))        return inputDigit(key);
+    if (key === 'decimal')       return inputDecimal();
+    if (key === 'clear')         return clearAll();
+    if (key === 'equals')        return handleEquals();
+    if (key in operatorMap)      return chooseOperator(operatorMap[key]);
+});
+
+updateDisplay();
