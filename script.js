@@ -44,7 +44,7 @@ function inputDigit(digit) {
     updateDisplay();
 }
 
-function inputDecimel() {
+function inputDecimal() {
     if (currentInput === 'Error') {currentInput = '0'};
     if (waitingForOperand) {
         currentInput = '0.';
@@ -83,6 +83,7 @@ function chooseOperator(nextOp) {
 function handleEquals() {
     if (operator === null || previousValue === null || currentInput === 'Error') return;
     const inputValue = parseFloat(currentInput)
+    const result = compute(previousValue, inputValue, operator);
     const formatted  = result === null ? null : formatResult(result);
     if (formatted === null) return showError();
 
