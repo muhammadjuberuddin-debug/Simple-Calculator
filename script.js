@@ -43,3 +43,40 @@ function inputDigit(digit) {
     }
     updateDisplay();
 }
+
+function inputDecimel() {
+    if (currentInput === 'Error') {currentInput = '0'};
+    if (waitingForOperand) {
+        currentInput = '0.';
+        waitingForOperand = false;
+    } else if (!currentInput.includes('.')) {
+       currentInput += '.';
+    }
+    updateDisplay();
+}
+
+function chooseOperator(nextOp) {
+    if (currentInput === 'Error') return;
+
+    const inputValue = parseFloat(currentInput);
+
+    if (operator && waitingForOperand) {
+        operator = nextOp;
+        return;
+    }
+
+    if (previousValue === null) {
+        previousValue = inputValue;
+    } else if (operator) {
+        const result = compute(previousValue, inputValue, operator);
+        const formatted = result === null ? null : formatResult(result);
+        if (formatted === null) return showError();
+        currentInput = formatted;
+        previousValue = result;
+        updateDisplay();       
+    }
+
+    operator = nextOp;
+    waitingForOperand = true;
+}
+
