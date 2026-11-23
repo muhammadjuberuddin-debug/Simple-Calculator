@@ -6,7 +6,7 @@ A clean, keyboard-friendly calculator built with **HTML, CSS, and JavaScript** â
 
 I built this to get comfortable with **CSS Grid** and the small "state machine" that every calculator needs. It's a vanilla-JS project â€” no frameworks, no build step. Just open `index.html`.
 
-You can try it here: **[Live Demo](https://your-calculator-link.netlify.app/)** *(replace with your deployed URL)*
+You can try it here: **[Live Demo](https://simplecalculator6769.netlify.app/)**
 
 ## Features
 
